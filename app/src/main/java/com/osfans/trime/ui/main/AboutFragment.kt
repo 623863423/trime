@@ -44,15 +44,6 @@ class AboutFragment : PaddingPreferenceFragment() {
                     ),
                 )
             }
-            addPreference(R.string.opencc_version, BuildConfig.OPENCC_VERSION) {
-                val hash = getCommitFromVersionName(BuildConfig.OPENCC_VERSION)
-                startActivity(
-                    Intent(
-                        Intent.ACTION_VIEW,
-                        Uri.parse("${Const.OPENCC_URL}/commit/$hash"),
-                    ),
-                )
-            }
             addPreference(
                 Preference(requireContext()).apply {
                     isIconSpaceReserved = false

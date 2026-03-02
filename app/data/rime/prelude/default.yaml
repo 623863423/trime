@@ -15,7 +15,6 @@ switcher:
   save_options:
     - full_shape
     - ascii_punct
-    - simplification
     - extended_charset
     - zh_hant
     - zh_hans

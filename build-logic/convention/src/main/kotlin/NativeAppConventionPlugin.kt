@@ -15,12 +15,6 @@ class NativeAppConventionPlugin : NativeBaseConventionPlugin() {
                     "--tags --long --always --exclude=latest",
             )
 
-    private val Project.openccVersion: String
-        get() =
-            runCmd(
-                "git -C app/src/main/jni/OpenCC describe --tags --long --always",
-            )
-
     override fun apply(target: Project) {
         super.apply(target)
 
@@ -32,7 +26,6 @@ class NativeAppConventionPlugin : NativeBaseConventionPlugin() {
             }
             defaultConfig {
                 buildConfigField("String", "LIBRIME_VERSION", "\"${target.librimeVersion}\"")
-                buildConfigField("String", "OPENCC_VERSION", "\"${target.openccVersion}\"")
             }
         }
     }

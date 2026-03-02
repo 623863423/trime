@@ -2444,7 +2444,6 @@ namespace SwitcherReg {
 }
 
 void types_ext_init(lua_State *L);
-void opencc_init(lua_State *L);
 
 void types_init(lua_State *L) {
   EXPORT(SegmentReg, L);
