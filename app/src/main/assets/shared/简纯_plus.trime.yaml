@@ -92,6 +92,7 @@ style:
   latin_locale: en_US #西文语言
   locale: zh_CN #预设语言 zh_TW,zh_CN,zh_HK,""
   background_dim_amount: 0.5 #备用参数，无功能
+  fallback_keyboard: default #保底键盘，当输入方案找不到对应键盘时使用
   keyboards: #键盘配置：自动键盘、字母、数字、符号
     - .default
     - symbols
