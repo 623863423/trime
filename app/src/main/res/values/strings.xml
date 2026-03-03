@@ -185,6 +185,7 @@
     <string name="max_span_count_landscape">Maximum candidates per row (landscape)</string>
     <string name="user_dictionary">User dictionary</string>
     <string name="import_">Import</string>
+    <string name="export">Export</string>
     <string name="import_error">Import error</string>
     <string name="import_n_entries">Imported %1$d entry(-ies)</string>
     <string name="exported_n_entries">Exported %1$d entry(-ies)</string>
