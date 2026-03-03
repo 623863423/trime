@@ -56,9 +56,6 @@ sealed class NavigationRoute : Parcelable {
     data object Advanced : NavigationRoute()
 
     @Serializable
-    data object Developer : NavigationRoute()
-
-    @Serializable
     data object About : NavigationRoute()
 
     @Serializable
@@ -99,9 +96,6 @@ sealed class NavigationRoute : Parcelable {
             }
             fragment<AdvancedSettingsFragment, Advanced> {
                 label = ctx.getString(R.string.advanced)
-            }
-            fragment<DeveloperFragment, Developer> {
-                label = ctx.getString(R.string.developer)
             }
             fragment<AboutFragment, About> {
                 label = ctx.getString(R.string.about)

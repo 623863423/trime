@@ -10,7 +10,6 @@ import android.content.Intent
 import android.util.SparseArray
 import android.view.KeyEvent
 import com.osfans.trime.ui.main.ClipEditActivity
-import com.osfans.trime.ui.main.LogActivity
 import com.osfans.trime.ui.main.MainActivity
 import com.osfans.trime.ui.main.NavigationRoute
 
@@ -59,10 +58,6 @@ object AppUtils {
     }
 
     fun launchMainToSchemaList(context: Context) = launchMainToDest(context, NavigationRoute.SchemaList)
-
-    fun launchLogActivity(context: Context) {
-        context.startActivity<LogActivity>()
-    }
 
     fun launchClipEdit(
         context: Context,

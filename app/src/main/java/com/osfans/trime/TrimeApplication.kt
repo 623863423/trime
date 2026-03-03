@@ -18,7 +18,7 @@ import com.osfans.trime.data.db.CollectionHelper
 import com.osfans.trime.data.prefs.AppPrefs
 import com.osfans.trime.data.soundeffect.SoundEffectManager
 import com.osfans.trime.receiver.RimeIntentReceiver
-import com.osfans.trime.ui.main.LogActivity
+
 import com.osfans.trime.worker.BackgroundSyncWork
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.MainScope
@@ -55,38 +55,6 @@ class TrimeApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        if (!BuildConfig.DEBUG) {
-            Thread.setDefaultUncaughtExceptionHandler { _, e ->
-                val crashTime = System.currentTimeMillis()
-                val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-                val lastCrashTimePrefKey = "last_crash_time"
-                val lastCrashTime = sharedPrefs.getLong(lastCrashTimePrefKey, -1L)
-                sharedPrefs.edit(commit = true) {
-                    putLong(lastCrashTimePrefKey, crashTime)
-                }
-                if (crashTime - lastCrashTime <= 10_000L) {
-                    // continuous crashes within 10 seconds, maybe in a crash loop. just bail
-                    exitProcess(10)
-                }
-                startActivity(
-                    Intent(applicationContext, LogActivity::class.java).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        putExtra(LogActivity.FROM_CRASH, true)
-                        // avoid transaction overflow
-                        val truncated =
-                            e.stackTraceToString().let {
-                                if (it.length > MAX_STACKTRACE_SIZE) {
-                                    it.take(MAX_STACKTRACE_SIZE) + "<truncated>"
-                                } else {
-                                    it
-                                }
-                            }
-                        putExtra(LogActivity.CRASH_STACK_TRACE, truncated)
-                    },
-                )
-                exitProcess(10)
-            }
-        }
         instance = this
         try {
             val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)

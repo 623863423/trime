@@ -95,17 +95,7 @@
     <string name="hook_shift_num">Ignore Shift locked for 0-9</string>
     <string name="hook_shift_symbol">Ignore Shift locked for Symbol keys</string>
     <string name="hook_shift_arrow">Keep Shift locked for Arrow keys</string>
-    <string name="exception_logcat_created">Logcat process is already created</string>
-    <string name="app_crash">Application crashed</string>
-    <string name="app_crash_message">Sorry, but we bring you some logs to investigate.</string>
-    <string name="real_time_logs">Real-time logs</string>
-    <string name="real_time_logs_clear">Clear All Logs</string>
-    <string name="real_time_logs_confirm">Do you want to clear all Logs? (This action cannot be undo)</string>
-    <string name="crash_logs">Crash logs</string>
-    <string name="clear">Clear Screen</string>
-    <string name="export">Export</string>
-    <string name="scroll_to_bottom">Jump to Bottom</string>
-    <string name="developer">Developer</string>
+
     <string name="profile">Profile</string>
     <string name="virtual_keyboard">Virtual Keyboard</string>
     <string name="theme">Keyboard Style</string>
